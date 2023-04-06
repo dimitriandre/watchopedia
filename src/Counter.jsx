@@ -5,6 +5,8 @@ const Counter = () => {
     return { counter: 10, title: "Fun" };
   });
 
+  const [titleState, setTitleState] = useState("Fun");
+
   function incrementCounter() {
     setCounterState((prevState) => {
       return { ...prevState, counter: prevState.counter + 1 };
@@ -19,9 +21,7 @@ const Counter = () => {
 
   return (
     <div className="col-12 col-md-4 offset-md-4 border  text-white">
-      <span className="h2 pt-4 m-2 text-white-50">
-        {counterState.title} Counter{" "}
-      </span>
+      <span className="h2 pt-4 m-2 text-white-50">{titleState} Counter </span>
       <br />
       <button className="btn btn-success m-1" onClick={incrementCounter}>
         +1
